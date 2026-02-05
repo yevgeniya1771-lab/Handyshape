@@ -1,0 +1,738 @@
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu"
+import { 
+  Smartphone, 
+  ShieldCheck, 
+  Truck, 
+  Apple,
+  Recycle,
+  Package,
+  Headphones,
+  Search,
+  User,
+  Star,
+  ArrowRight,
+  Clock,
+  CheckCircle,
+  Globe,
+  ShoppingCart,
+  CreditCard,
+  RotateCcw
+} from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Top Announcement Bar - Orange */}
+      <div style={{ backgroundColor: '#FFB348' }} className="text-white py-2.5">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-xs sm:text-sm font-medium">
+            Free shipping on orders over €50 | 30-day returns
+          </p>
+        </div>
+      </div>
+
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-gray/50/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Top Row - Logo and Menu Links */}
+          <div className="flex h-16 items-center justify-between border-b border-gray-200/30">
+            {/* Logo */}
+            <Link href="/" className="flex items-center shrink-0">
+              <Image 
+                src="/handyswap-logo.svg" 
+                alt="Handyswap" 
+                width={120} 
+                height={36}
+                className="h-8 w-auto"
+              />
+            </Link>
+
+            {/* Navigation Links */}
+            <NavigationMenu className="hidden md:flex">
+              <NavigationMenuList className="gap-1">
+                <NavigationMenuItem>
+                  <Link href="/iphone" legacyBehavior passHref>
+                    <NavigationMenuLink className="px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded-lg">
+                      iPhones
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/samsung" legacyBehavior passHref>
+                    <NavigationMenuLink className="px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded-lg">
+                      Samsung
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/tablets" legacyBehavior passHref>
+                    <NavigationMenuLink className="px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded-lg">
+                      Tablets
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/earbuds" legacyBehavior passHref>
+                    <NavigationMenuLink className="px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded-lg">
+                      Earbuds
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/support" legacyBehavior passHref>
+                    <NavigationMenuLink className="px-3 py-2 text-sm font-medium transition-colors hover:bg-primary/10 hover:text-primary rounded-lg">
+                      Support
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+
+          {/* Bottom Row - Full Width Search */}
+          <div className="py-3">
+            <div className="relative w-full">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+              <Input 
+                placeholder="What are you looking for?" 
+                className="pl-12 h-12 rounded-xl bg-muted/50 border-gray/50 focus:border-primary/50 focus:ring-primary/20 w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section - Carousel */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background">
+        <div className="mx-auto max-w-7xl">
+          {/* Horizontal Scroll Container */}
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+            {/* Banner 1 - Trade In */}
+            <div className="min-w-full snap-center">
+              <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="relative order-2 lg:order-1">
+                  <div className="aspect-[3/4] max-w-sm mx-auto rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 backdrop-blur-sm flex items-center justify-center border border-primary/20 shadow-2xl overflow-hidden p-8">
+                    <Image 
+                      src="/phones/iphone-17-pro.jpg" 
+                      alt="Trade in your smartphone" 
+                      width={400} 
+                      height={533}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 text-center lg:text-left">
+                  <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+                    Smartphone
+                    <br />
+                    Trade In
+                  </h1>
+                  <p className="mt-4 sm:mt-6 text-pretty text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                    {'Turn your old device into credit. Fast processing and great prices - experience the easiest way to upgrade.'}
+                  </p>
+                  <div className="mt-8 sm:mt-10">
+                    <Button size="lg" className="h-12 sm:h-14 rounded-2xl px-8 sm:px-10 text-sm sm:text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
+                      Trade In Now
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Banner 2 - iPhone 17 Pro */}
+            <div className="min-w-full snap-center">
+              <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="relative order-2 lg:order-1">
+                  <div className="aspect-[3/4] max-w-sm mx-auto rounded-3xl bg-gradient-to-br from-blue-100/50 to-blue-50/30 backdrop-blur-sm flex items-center justify-center border border-blue-200/40 shadow-2xl overflow-hidden p-8">
+                    <Image 
+                      src="/phones/iphone-air.jpg" 
+                      alt="iPhone 17 Pro" 
+                      width={400} 
+                      height={533}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 text-center lg:text-left">
+                  <Badge className="mb-4 rounded-full bg-accent text-accent-foreground">New Arrival</Badge>
+                  <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+                    iPhone 17 Pro
+                    <br />
+                    Is Here
+                  </h1>
+                  <p className="mt-4 sm:mt-6 text-pretty text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                    {'Experience the ultimate in smartphone innovation. The most powerful iPhone ever created.'}
+                  </p>
+                  <div className="mt-8 sm:mt-10">
+                    <Button size="lg" className="h-12 sm:h-14 rounded-2xl px-8 sm:px-10 text-sm sm:text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
+                      Shop Now
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Banner 3 - Samsung Galaxy */}
+            <div className="min-w-full snap-center">
+              <div className="grid gap-8 lg:grid-cols-2 lg:gap-16 items-center">
+                <div className="relative order-2 lg:order-1">
+                  <div className="aspect-[3/4] max-w-sm mx-auto rounded-3xl bg-gradient-to-br from-purple-100/50 to-purple-50/30 backdrop-blur-sm flex items-center justify-center border border-purple-200/40 shadow-2xl overflow-hidden p-8">
+                    <Image 
+                      src="/phones/samsung-s24.jpg" 
+                      alt="Samsung Galaxy S24" 
+                      width={400} 
+                      height={533}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 text-center lg:text-left">
+                  <Badge className="mb-4 rounded-full bg-primary text-primary-foreground">Best Seller</Badge>
+                  <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
+                    Samsung
+                    <br />
+                    Galaxy S24
+                  </h1>
+                  <p className="mt-4 sm:mt-6 text-pretty text-base sm:text-lg leading-relaxed text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                    {'Powerful AI features meet stunning design. The ultimate Android flagship experience.'}
+                  </p>
+                  <div className="mt-8 sm:mt-10">
+                    <Button size="lg" className="h-12 sm:h-14 rounded-2xl px-8 sm:px-10 text-sm sm:text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
+                      Explore Galaxy
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicators */}
+          <div className="flex justify-center gap-2 pb-6">
+            <div className="h-2 w-2 rounded-full bg-primary"></div>
+            <div className="h-2 w-2 rounded-full bg-primary/30"></div>
+            <div className="h-2 w-2 rounded-full bg-primary/30"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Category Icons */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+          <Card className="group relative overflow-hidden border-gray/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+            <CardContent className="flex flex-col items-center gap-3 sm:gap-4 p-6 sm:p-8 text-center">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Apple className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              </div>
+              <p className="font-semibold text-sm sm:text-base text-foreground">Apple</p>
+            </CardContent>
+          </Card>
+          <Card className="group relative overflow-hidden border-gray/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+            <CardContent className="flex flex-col items-center gap-3 sm:gap-4 p-6 sm:p-8 text-center">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Recycle className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+              </div>
+              <p className="font-semibold text-sm sm:text-base text-foreground">Recycling</p>
+            </CardContent>
+          </Card>
+          <Card className="group relative overflow-hidden border-gray/50 hover:border-gray/50-primary/50 transition-all hover:shadow-lg cursor-pointer">
+            <CardContent className="flex flex-col items-center gap-3 sm:gap-4 p-6 sm:p-8 text-center">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <ShieldCheck className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+              </div>
+              <p className="font-semibold text-sm sm:text-base text-foreground">Warranties</p>
+            </CardContent>
+          </Card>
+          <Card className="group relative overflow-hidden border-gray/50/50 hover:border-primary/50 transition-all hover:shadow-lg cursor-pointer">
+            <CardContent className="flex flex-col items-center gap-3 sm:gap-4 p-6 sm:p-8 text-center">
+              <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <Package className="h-6 w-6 sm:h-8 sm:w-8 text-accent" />
+              </div>
+              <p className="font-semibold text-sm sm:text-base text-foreground">Accessories</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Bestsellers */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="mb-8 sm:mb-12 flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+              Bestsellers
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">Our most loved devices</p>
+          </div>
+          <Button variant="ghost" className="gap-2 font-semibold text-primary hover:bg-primary/10 text-sm sm:text-base">
+            <span className="hidden sm:inline">View all</span>
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+        
+        <div className="grid gap-4 sm:gap-6 grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: "iPhone 17 Pro", price: "€999", badge: "NEW", image: "/phones/iphone-17-pro.jpg" },
+            { name: "iPhone Air", price: "€849", badge: null, image: "/phones/iphone-air.jpg" },
+            { name: "iPhone 17", price: "€799", badge: null, image: "/phones/iphone-17-pro.jpg" },
+            { name: "iPhone 16", price: "€699", badge: "SALE", image: "/phones/iphone-16.jpg" }
+          ].map((product, i) => (
+            <Card key={i} className="group relative overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl cursor-pointer">
+              <CardContent className="p-0">
+                <div className="relative aspect-square bg-white flex items-center justify-center p-6">
+                  {product.badge && (
+                    <Badge className="absolute top-3 left-3 sm:top-4 sm:left-4 rounded-full bg-accent text-accent-foreground font-semibold text-xs">
+                      {product.badge}
+                    </Badge>
+                  )}
+                  <Image 
+                    src={product.image || "/phones/iPhone 17 Pro - Deep Blue.jpg"} 
+                    alt={product.name} 
+                    width={300} 
+                    height={300}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <h3 className="font-semibold text-base sm:text-lg text-foreground">{product.name}</h3>
+                  <p className="mt-2 text-xl sm:text-2xl font-bold text-primary">{product.price}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* The Latest & Greatest */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            The Latest & Greatest
+          </h2>
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-muted-foreground">Discover the newest flagship devices</p>
+        </div>
+
+        {/* Top Row - 3 Cards */}
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 mb-4 sm:mb-6">
+          {[
+            { name: "iPhone 16e", subtitle: "Hot Deal", price: "€599", badge: "Hot Deal", image: "/phones/iphone-16.jpg" },
+            { name: "iPhone 17 Pro", subtitle: "POPULAR", price: "€999", badge: "POPULAR", image: "/phones/iphone-17-pro.jpg" },
+            { name: "iPhone 16", subtitle: "Hot Deal", price: "€699", badge: null, image: "/phones/iphone-16.jpg" }
+          ].map((product, i) => (
+            <Card key={i} className="group relative overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl bg-gradient-to-br from-background to-muted/30">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wide">{product.subtitle}</p>
+                    <h3 className="text-lg sm:text-xl font-bold text-foreground mt-1">{product.name}</h3>
+                  </div>
+                  {product.badge && (
+                    <Badge className="rounded-full bg-accent text-accent-foreground font-semibold text-xs">
+                      {product.badge}
+                    </Badge>
+                  )}
+                </div>
+                <div className="aspect-[4/3] rounded-2xl bg-white flex items-center justify-center mb-3 sm:mb-4 p-4 sm:p-6">
+                  <Image 
+                    src={product.image || "/phones/iPhone 17 Pro - Deep Blue.jpg"} 
+                    alt={product.name} 
+                    width={250} 
+                    height={188}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                  />
+                </div>
+                <div className="flex items-center justify-between">
+                  <p className="text-xl sm:text-2xl font-bold text-primary">{product.price}</p>
+                  <Button className="rounded-xl h-9 sm:h-10 px-4 sm:px-6 text-sm">Shop Now</Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Product Images Grid - 4 items in 2x2 */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-4 sm:mb-6">
+          {[
+            { image: "/phones/iphone-air.jpg" },
+            { image: "/phones/iphone-17-pro.jpg" },
+            { image: "/phones/iphone-16.jpg" },
+            { image: "/phones/iphone-air.jpg" }
+          ].map((item, i) => (
+            <Card key={i} className="group relative overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl cursor-pointer">
+              <CardContent className="p-0">
+                <div className="aspect-[4/3] bg-white flex items-center justify-center p-4 sm:p-6">
+                  <Image 
+                    src={item.image || "/phones/iPhone 17 Pro - Deep Blue.jpg"} 
+                    alt="Phone" 
+                    width={250} 
+                    height={188}
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                  />
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Featured iPhone 17 */}
+        <Card className="overflow-hidden border-gray/50/50 bg-gradient-to-br from-primary/5 to-background shadow-xl">
+          <CardContent className="p-0">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+              <div className="p-6 sm:p-8 lg:p-12 order-2 lg:order-1">
+                <h3 className="text-3xl sm:text-4xl font-bold text-foreground mb-3 sm:mb-4">iPhone 17</h3>
+                <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                  {'Experience the future. The most advanced iPhone yet.'}
+                </p>
+                <Button size="lg" className="h-11 sm:h-12 rounded-2xl px-6 sm:px-8 shadow-lg text-sm sm:text-base">
+                  Shop Now
+                </Button>
+              </div>
+              <div className="aspect-[4/3] lg:aspect-auto lg:h-full bg-white flex items-center justify-center p-8 sm:p-12 order-1 lg:order-2">
+                <Image 
+                  src="/phones/iphone-17-pro.jpg" 
+                  alt="iPhone 17" 
+                  width={400} 
+                  height={400}
+                  className="w-full h-full object-contain max-w-xs mx-auto"
+                />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Budget-Friendly Section */}
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#FEF3E2' }}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
+                {'Are you looking for a '}
+                <span className="text-primary">budget-friendly</span>
+                {' option?'}
+              </h2>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
+                {'Discover our selection of certified refurbished devices at incredible prices. Premium quality within your budget.'}
+              </p>
+            </div>
+            <div className="aspect-[4/3] rounded-3xl bg-white flex items-center justify-center border border-orange-200/50 shadow-lg overflow-hidden p-6 sm:p-8">
+              <Image 
+                src="/phones/iphone-air.jpg" 
+                alt="Budget-friendly device" 
+                width={400} 
+                height={533}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Picks for Mobile, Tablet & Audio */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Top Picks for Mobile, Tablet & Audio
+          </h2>
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-muted-foreground">Expand your tech ecosystem</p>
+        </div>
+
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {/* iPad 11 */}
+          <Card className="group relative overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl bg-gradient-to-br from-blue-50/50 to-background">
+            <CardContent className="p-6 sm:p-8">
+              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-blue-100/50 to-blue-50/30 flex items-center justify-center mb-4 sm:mb-6 p-4 sm:p-6">
+                <Image 
+                  src="/ipad-11.jpg" 
+                  alt="iPad 11" 
+                  width={300} 
+                  height={225}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                />
+              </div>
+              <Badge className="mb-3 sm:mb-4 rounded-full bg-primary text-primary-foreground text-xs">Limited Stock</Badge>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">iPad 11</h3>
+              <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+                {'The iPad for everyday use. Powerful and versatile for work and play.'}
+              </p>
+              <Button className="w-full rounded-xl h-10 sm:h-11 text-sm" size="lg">
+                Shop iPad 11
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* AirPods Pro 3 */}
+          <Card className="group relative overflow-hidden border-gray/50/50 hover:border-accent/50 transition-all hover:shadow-xl" style={{ backgroundColor: '#FFB348' }}>
+            <CardContent className="p-6 sm:p-8">
+              <div className="aspect-[4/3] rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 sm:mb-6 border border-white/30 p-4 sm:p-6">
+                <Image 
+                  src="/airpods-pro-3.jpg" 
+                  alt="AirPods Pro 3" 
+                  width={300} 
+                  height={225}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                />
+              </div>
+              <Badge className="mb-3 sm:mb-4 rounded-full bg-white text-foreground text-xs font-semibold">Hot Deal</Badge>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">AirPods Pro 3</h3>
+              <p className="text-foreground/80 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+                {'Immersive sound. Active noise cancellation. Premium audio.'}
+              </p>
+              <div className="flex gap-2 sm:gap-3">
+                <Button className="flex-1 rounded-xl h-10 sm:h-11 bg-primary hover:bg-primary/90 text-white text-sm" size="lg">
+                  Shop Now
+                </Button>
+                <Button variant="ghost" className="rounded-xl bg-white/90 hover:bg-white border-white/50 h-10 sm:h-11 text-sm" size="lg">
+                  €299
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Samsung Galaxy S24 */}
+          <Card className="group relative overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl bg-gradient-to-br from-primary/5 to-background">
+            <CardContent className="p-6 sm:p-8">
+              <div className="aspect-[4/3] rounded-2xl bg-white flex items-center justify-center mb-4 sm:mb-6 p-4 sm:p-6">
+                <Image 
+                  src="/phones/samsung-s24.jpg" 
+                  alt="Samsung Galaxy S24" 
+                  width={300} 
+                  height={225}
+                  className="w-full h-full object-contain group-hover:scale-110 transition-transform"
+                />
+              </div>
+              <Badge className="mb-3 sm:mb-4 rounded-full bg-primary text-primary-foreground text-xs">Hot Deal</Badge>
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">Samsung Galaxy S24</h3>
+              <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+                {'Powerful performance. Stunning display. AI-powered features.'}
+              </p>
+              <div className="flex gap-2 sm:gap-3">
+                <Button className="flex-1 rounded-xl h-10 sm:h-11 text-sm" size="lg">
+                  Shop Galaxy S24
+                </Button>
+                <Button variant="ghost" className="rounded-xl bg-transparent h-10 sm:h-11 text-sm hover:bg-primary/10" size="lg">
+                  All Samsung
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Customer Reviews */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="mb-8 sm:mb-12 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+            Loved by Customers
+          </h2>
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-muted-foreground">Real reviews from Trustpilot</p>
+        </div>
+
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            { name: "Michael von Sonnenberg", text: "Great company. I was pretty happy with the entire service and was provided." },
+            { name: "Tim Paulson", text: "Recently ordered a replacement laptop. Service was quick and the laptop arrived within." },
+            { name: "Harry", text: "Great website with helpful site. Prices were fair and I found a laptop that match." },
+            { name: "Super Hardy", text: "Really impressed with the service from BuyBack. I was able to get a replacement." }
+          ].map((review, i) => (
+            <Card key={i} className="border-gray/50/50 hover:shadow-lg transition-shadow bg-gradient-to-br from-background to-muted/20">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-center gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-3.5 w-3.5 fill-green-500 text-green-500" />
+                  ))}
+                </div>
+                <h4 className="font-semibold text-foreground mb-2 text-sm">{review.name}</h4>
+                <p className="text-xs leading-relaxed text-muted-foreground mb-4">
+                  {review.text}
+                </p>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <CheckCircle className="h-3 w-3 text-green-500" />
+                  <span>Verified Purchase</span>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-6 sm:mt-8 text-center text-xs sm:text-sm text-muted-foreground">
+          Showing 4 of 3,847 5-star reviews on <span className="font-semibold text-foreground">Trustpilot</span>
+        </div>
+      </section>
+
+      {/* Shipping & Delivery */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-primary/3 to-background border-y border-gray/50/50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="mb-8 sm:mb-12 text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+              Shipping & Delivery
+            </h2>
+            <p className="mt-3 text-sm sm:text-base lg:text-lg text-muted-foreground">Fast, secure, and reliable</p>
+          </div>
+
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Truck, title: "Free Shipping", text: "On all orders over €50. Fast delivery to your door." },
+              { icon: Clock, title: "Express Delivery", text: "Need it fast? Get it within 24-48 hours." },
+              { icon: Package, title: "Secure Packaging", text: "Premium packaging ensures safe arrival." },
+              { icon: Globe, title: "Track Your Order", text: "Real-time updates from warehouse to doorstep." }
+            ].map((item, i) => (
+              <Card key={i} className="border-gray/50/50 bg-background/80 backdrop-blur-sm hover:shadow-lg transition-all">
+                <CardContent className="p-6 sm:p-8 text-center">
+                  <div className="mx-auto h-14 w-14 sm:h-16 sm:w-16 rounded-2xl bg-accent/15 flex items-center justify-center mb-4 sm:mb-6">
+                    <item.icon className="h-7 w-7 sm:h-8 sm:w-8 text-accent" />
+                  </div>
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3">{item.title}</h3>
+                  <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Stories & Tips */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="mb-8 sm:mb-12 flex items-center justify-between">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+              Latest stories & tips
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">The Blog</p>
+          </div>
+          <Button variant="ghost" className="gap-2 font-semibold text-primary hover:bg-primary/10 text-sm sm:text-base">
+            <span className="hidden sm:inline">View all</span>
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
+
+        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            { title: "Guide the new iPhone for design and craft", category: "Tips & Tricks", bg: "from-slate-100 to-slate-50" },
+            { title: "Color that goes: finding your perfect match", category: "Buying Guide", bg: "from-blue-100 to-blue-50" },
+            { title: "Power tips: how to get your best device", category: "Tech News", bg: "from-purple-100 to-purple-50" }
+          ].map((post, i) => (
+            <Card key={i} className="group overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl cursor-pointer">
+              <CardContent className="p-0">
+                <div className={`aspect-[16/10] bg-gradient-to-br ${post.bg} flex items-center justify-center p-6 sm:p-8`}>
+                  <Smartphone className="h-24 w-24 sm:h-32 sm:w-32 text-muted-foreground/20 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="p-4 sm:p-6">
+                  <p className="text-xs text-muted-foreground mb-2">{post.category}</p>
+                  <h3 className="text-sm sm:text-base font-semibold text-foreground leading-snug mb-3 sm:mb-4">
+                    {post.title}
+                  </h3>
+                  <Button variant="ghost" className="gap-2 p-0 h-auto font-semibold text-primary text-xs sm:text-sm hover:bg-transparent">
+                    Read article
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-gray/50 bg-muted/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+          <div className="grid gap-6 sm:gap-8 grid-cols-2 md:grid-cols-3 lg:grid-cols-6 mb-8 sm:mb-12">
+            <div className="col-span-2 md:col-span-3 lg:col-span-2">
+              <Link href="/" className="flex items-center mb-4">
+                <Image 
+                  src="/handyswap-logo.svg" 
+                  alt="Handyswap" 
+                  width={120} 
+                  height={36}
+                  className="h-8 w-auto"
+                />
+              </Link>
+              <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground max-w-md mb-4 sm:mb-6">
+                {'We are the best device solution. Approved for reselling devices to customers. We are trusted and 100% safe certified.'}
+              </p>
+              <div className="text-xs sm:text-sm text-muted-foreground">
+                <p>Handyswap GmbH</p>
+                <p>Musterstraße 123</p>
+                <p>10115 Berlin, Germany</p>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground mb-3 sm:mb-4">Shop</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                <li><Link href="/iphone" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Buy iPhone</Link></li>
+                <li><Link href="/samsung" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Buy Samsung</Link></li>
+                <li><Link href="/tablets" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Buy iPad</Link></li>
+                <li><Link href="/earbuds" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Buy AirPods</Link></li>
+                <li><Link href="/trade-in" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Trade In</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground mb-3 sm:mb-4">Company</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                <li><Link href="/about" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
+                <li><Link href="/careers" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
+                <li><Link href="/press" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Press</Link></li>
+                <li><Link href="/sustainability" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Sustainability</Link></li>
+                <li><Link href="/blog" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground mb-3 sm:mb-4">Support</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                <li><Link href="/help" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Help Center</Link></li>
+                <li><Link href="/contact" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Contact Us</Link></li>
+                <li><Link href="/warranty" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Warranty Info</Link></li>
+                <li><Link href="/returns" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Returns</Link></li>
+                <li><Link href="/shipping" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Shipping Info</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground mb-3 sm:mb-4">Legal</h3>
+              <ul className="space-y-2 sm:space-y-2.5">
+                <li><Link href="/privacy" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link></li>
+                <li><Link href="/terms" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link></li>
+                <li><Link href="/cookies" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Cookie Policy</Link></li>
+                <li><Link href="/imprint" className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors">Imprint</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray/50 pt-6 sm:pt-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 mb-4 sm:mb-6">
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                © 2026 Handyswap. All rights reserved.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3">
+                <span className="text-xs text-muted-foreground">Secure Payment:</span>
+                <div className="flex gap-1.5 sm:gap-2">
+                  {['Apple Pay', 'Visa', 'Mastercard', 'PayPal'].map((method) => (
+                    <div key={method} className="h-6 sm:h-7 px-2 sm:px-2.5 rounded-md bg-white border border-gray/50 flex items-center justify-center shadow-sm">
+                      <span className="text-[10px] sm:text-xs font-medium text-foreground">{method}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs text-muted-foreground">
+              <Badge className="rounded-md gap-1.5">
+                <CheckCircle className="h-3 w-3 text-green-500" />
+                Trusted Shop
+              </Badge>
+              <span className="hidden sm:inline">•</span>
+              <span>SSL Secured</span>
+              <span className="hidden sm:inline">•</span>
+              <span>30-Day Money Back</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
