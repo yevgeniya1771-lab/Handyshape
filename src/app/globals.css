@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 @theme inline {
+  /* Custom breakpoints */
+  --breakpoint-xs: 375px;
+
   --color-background: #ffffff;
   --color-foreground: #09090b;
   --color-primary: #4488FF;

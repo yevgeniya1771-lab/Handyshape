@@ -37,36 +37,36 @@ const TOP_PICKS = [
 
 export function TopPicksSection() {
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-      <div className="mb-8 sm:mb-12 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+    <section className="py-8 xs:py-10 md:py-14 lg:py-20">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 mb-4 xs:mb-6 md:mb-10 lg:mb-12 text-center">
+        <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
           Top Picks for Mobile, Tablet & Audio
         </h2>
-        <p className="mt-3 text-sm sm:text-base lg:text-lg text-muted-foreground">Expand your tech ecosystem</p>
+        <p className="mt-1 xs:mt-2 md:mt-3 text-xs xs:text-sm md:text-base lg:text-lg text-muted-foreground">Expand your tech ecosystem</p>
       </div>
 
-      <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="flex gap-3 xs:gap-4 overflow-x-auto scrollbar-hide px-4 md:px-6 lg:px-0 md:grid md:gap-6 lg:gap-8 md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:mx-auto md:max-w-7xl lg:px-8">
         {TOP_PICKS.map((item) => (
           <Card
             key={item.name}
-            className={`group relative overflow-hidden hover:border-primary/30 transition-all hover:shadow-xl ${item.cardClass}`}
+            className={`group relative overflow-hidden hover:border-primary/30 transition-all hover:shadow-xl shrink-0 w-[220px] xs:w-[260px] sm:w-[280px] md:w-auto ${item.cardClass}`}
           >
-            <CardContent className="p-6 sm:p-8">
-              <div className={`aspect-[4/3] rounded-2xl ${item.imgBg} flex items-center justify-center mb-4 sm:mb-6 p-4 sm:p-6 relative`}>
+            <CardContent className="p-4 xs:p-5 md:p-6 lg:p-8 pt-4 xs:pt-5 md:pt-6 lg:pt-8">
+              <div className={`aspect-[4/3] rounded-xl xs:rounded-2xl ${item.imgBg} flex items-center justify-center mb-3 xs:mb-4 md:mb-6 p-3 xs:p-4 md:p-6 relative`}>
                 <img
                   src={item.img}
                   alt={item.name}
                   className={`w-full h-full object-contain transition-transform duration-500 ${item.imgScale}`}
                 />
               </div>
-              <Badge className={`mb-3 sm:mb-4 rounded-full text-xs ${item.badge.className}`}>
+              <Badge className={`mb-2 xs:mb-3 md:mb-4 rounded-full text-[10px] xs:text-xs ${item.badge.className}`}>
                 {item.badge.label}
               </Badge>
-              <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">{item.name}</h3>
-              <p className="text-muted-foreground mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm">
+              <h3 className="text-base xs:text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-1 xs:mb-2">{item.name}</h3>
+              <p className="text-muted-foreground mb-3 xs:mb-4 md:mb-6 leading-relaxed text-[10px] xs:text-xs md:text-sm">
                 {item.description}
               </p>
-              <Button variant="secondary" className="w-full" size="lg">
+              <Button variant="secondary" className="w-full text-xs xs:text-sm" size="default">
                 {item.cta}
               </Button>
             </CardContent>
