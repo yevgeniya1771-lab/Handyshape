@@ -17,12 +17,9 @@ export function Header() {
 
   return (
     <div className="sticky top-0 z-50 bg-gradient-to-br from-primary/10 via-primary/5 to-background">
-      <div
-        style={{ backgroundColor: 'rgba(255, 179, 72, 0.85)' }}
-        className="backdrop-blur-md text-black py-2.5"
-      >
+      <div className="bg-primary/5 backdrop-blur-md py-2 xs:py-2.5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs sm:text-sm font-medium">
+          <p className="text-center text-xs sm:text-sm font-medium text-amber-600">
             Free shipping on orders over &euro;50 | 30-day returns
           </p>
         </div>
@@ -31,7 +28,6 @@ export function Header() {
       <nav className="backdrop-blur-xl">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
-            {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="md:hidden h-10 w-10 inline-flex items-center justify-center rounded-full text-foreground hover:text-primary transition-colors"
@@ -80,7 +76,6 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile search bar - always visible */}
         <div className="md:hidden px-3 xs:px-4 py-1.5 xs:py-2 bg-background/80 backdrop-blur-xl">
           <div className="relative">
             <Search className="absolute left-2.5 xs:left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 xs:h-4 xs:w-4 text-muted-foreground" />
@@ -91,14 +86,12 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile menu panel */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
             mobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="px-4 py-3 space-y-1 bg-background/95 backdrop-blur-xl border-t border-border/40">
-            {/* Mobile nav links */}
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -109,8 +102,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-
-            {/* Mobile account link */}
             <Link
               href="/account"
               onClick={() => setMobileMenuOpen(false)}

@@ -72,6 +72,7 @@ export type BlogPost = {
   title: string
   category: string
   bg: string
+  img?: string
 }
 
 export type NavLink = {

@@ -27,9 +27,9 @@ export const SHIPPING_ITEMS: ShippingItem[] = [
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
-  { title: "The Ultimate Guide to Choosing Your Next iPhone Model", category: "Tips & Tricks", bg: "from-slate-100 to-slate-50" },
-  { title: "Find the Perfect Color: A Buyer's Complete Handbook", category: "Buying Guide", bg: "from-blue-100 to-blue-50" },
-  { title: "Top Power Tips to Get the Most From Your Device", category: "Tech News", bg: "from-purple-100 to-purple-50" },
+  { title: "The Ultimate Guide to Choosing Your Next iPhone Model", category: "Tips & Tricks", bg: "from-slate-100 to-slate-50", img: "/storycard1.jpeg" },
+  { title: "Find the Perfect Color: A Buyer's Complete Handbook", category: "Buying Guide", bg: "from-blue-100 to-blue-50", img: "/storycard2.jpeg" },
+  { title: "Top Power Tips to Get the Most From Your Device", category: "Tech News", bg: "from-purple-100 to-purple-50", img: "/storycard3.jpg" },
 ]
 
 export const PROMO_BANNERS: PromoBanner[] = [

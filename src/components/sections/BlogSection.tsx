@@ -1,4 +1,4 @@
-import { Smartphone, ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { BLOG_POSTS } from "@/data/content"
@@ -26,8 +26,12 @@ export function BlogSection() {
             className="group overflow-hidden border-gray/50/50 hover:border-primary/30 transition-all hover:shadow-xl cursor-pointer shrink-0 w-[220px] xs:w-[260px] sm:w-[280px] md:w-auto"
           >
             <div className="flex flex-col p-3 xs:p-4">
-              <div className={`aspect-[16/10] rounded-lg xs:rounded-xl bg-gradient-to-br ${post.bg} flex items-center justify-center mb-1`}>
-                <Smartphone className="h-16 w-16 xs:h-20 xs:w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 text-muted-foreground/20 group-hover:scale-110 transition-transform" />
+              <div className="aspect-[16/10] rounded-lg xs:rounded-xl overflow-hidden mb-1">
+                <img
+                  src={post.img}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
               <p className="text-[10px] xs:text-xs text-muted-foreground mt-2 xs:mt-3 mb-0.5 xs:mb-1">{post.category}</p>
               <h3 className="text-xs xs:text-sm md:text-base font-semibold text-foreground leading-snug mb-2 xs:mb-3">
